@@ -10,7 +10,7 @@ CREATE TABLE Customer (
 
 CREATE TABLE Car (
     Car_ID INT PRIMARY KEY,
-    Serial BOOLEAN,
+    dealer_id BOOLEAN,
     Make VARCHAR,
     Model VARCHAR,
     car_year INT,
@@ -18,6 +18,9 @@ CREATE TABLE Car (
     Mileage INT,
     VIN VARCHAR(17)
 );
+
+ALTER TABLE Car
+RENAME COLUMN Serial TO Dealer_ID;
 
 
 CREATE TABLE Salesperson (
@@ -61,6 +64,9 @@ CREATE TABLE Services (
     Service_ID INT PRIMARY KEY,
     Services_Done VARCHAR
 );
+
+ALTER TABLE Services
+RENAME COLUMN Services_Done TO Service_Type;
 
 
 CREATE TABLE Part_Used (
