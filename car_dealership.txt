@@ -1,0 +1,67 @@
+                                            Car Dealership
+
+TABLES:
+
+1) customer  (customer/car, customer/service_invoice, customer/purchase_invoice)
+    - customer_id (PK)
+    - first_name
+    - last_name
+    - phone_number
+    - email
+    - address
+
+
+2) car  (car/service_record, car/service_invoice, car/purchase_invoice, car/salesperson, car/customer)
+    - car_id (PK)
+    - dealer_id (TRUE if bought/being sold at our dealership)
+    - make
+    - model
+    - year
+    - color
+    - Mileage
+    - VIN
+
+
+3) salesperson (sales_person/car, sales_person/purchase_invoice)
+    - salesperson_id (PK)
+    - first_name
+    - last_name
+
+
+4) purchase_invoice (invoice/customer, invoice/salesperson, invoice/car)
+    - invoice_id (PK)
+    - car_id (FK)
+    - customer_id (FK)
+    - salesperson_id (FK)
+
+
+5) mechanic (mechanic/services, mechanic/service_invoices)
+    - mechanic_id (PK)
+    - first_name
+    - last_name
+
+
+6) service_invoices (service_invoices/mechanic, service_invoices/car, service_invoices/service)
+    - service_invoice_id (PK)
+    - car_id (FK)
+    - service_id (FK)
+    - dealer_serial (FK))
+    - dropoff_date
+    - pickup_date
+
+
+7) services
+    - service_id (PK)
+    - service_type
+
+
+8) part_used (part_used/service_invoice, part_used/service_record)
+    - partused_id (PK)
+    - service_invoice_id (FK)
+    - cost
+
+9) mechanic_services
+    - mechanic_services_id (PK)
+    - mechanic_id (FK)
+    - service_id (FK)
+    - service_invoice_id (FK)
